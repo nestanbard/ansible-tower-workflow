@@ -2,9 +2,11 @@
 - name: VPC
   hosts: localhost
   tasks:
-# Basic creation example:
-  - ec2_vpc:
-      state: present
-      cidr_block: 172.23.0.0/16
-      resource_tags: { "Environment":"Development" }
+  - name: create a VPC with dedicated tenancy and a couple of tags
+    amazon.aws.ec2_vpc_net:
+      name: Module_dev2
+      cidr_block: 10.10.0.0/16
       region: us-east-1
+      tags:
+        module: ec2_vpc_net
+        this: works
