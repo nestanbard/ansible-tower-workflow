@@ -1,6 +1,6 @@
 ---
 - name: install telnet
-  hosts: 
+  hosts: all
   tasks:
   - name: Install telnet on all
     package:
