@@ -14,8 +14,10 @@
     delegate_to: localhost
 
   - name: Install vpc pip
-    shell: |
-      yum install python-pip -y
+    package: 
+      name: python-pip
+      state: present
+      
     delegate_to: localhost
 
   - name: Install vpc pip
