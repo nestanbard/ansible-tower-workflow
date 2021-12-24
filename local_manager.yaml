@@ -1,12 +1,24 @@
 ---
 - name: Installs all necessary modules
   hosts: localhost
+  ignore_errors: true
   tasks:
-  - name: Install vpc
+  - name: Install vpc module
     shell: |
-      "ansible-galaxy collection install amazon.aws"
-      "ansible-galaxy collection install community.aws"
-      "sudo yum install python-pip"
-      "pip install boto botocore boto3"
+      ansible-galaxy collection install amazon.aws
+    delegate_to: localhost
 
+  - name: Install vpc module from community
+    shell: |
+      ansible-galaxy collection install community.aws
+    delegate_to: localhost
+
+  - name: Install vpc pip
+    shell: |
+      sudo yum install python-pip
+    delegate_to: localhost
+
+  - name: Install vpc pip
+    shell: |
+      pip install boto botocore boto3
     delegate_to: localhost
