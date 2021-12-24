@@ -23,4 +23,7 @@
   - name: Install vpc pip
     shell: |
       pip install boto botocore boto3
+      pip install --force-reinstall ansible ansible-base
+      ansible --version
+
     delegate_to: localhost
