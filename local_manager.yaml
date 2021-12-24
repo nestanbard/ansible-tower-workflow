@@ -15,7 +15,7 @@
 
   - name: Install vpc pip
     shell: |
-      sudo yum install python-pip
+      yum install python-pip -y
     delegate_to: localhost
 
   - name: Install vpc pip
