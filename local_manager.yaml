@@ -3,5 +3,10 @@
   hosts: localhost
   tasks:
   - name: Install vpc
-    shell: "ansible-galaxy collection install amazon.aws"
+    shell: |
+      "ansible-galaxy collection install amazon.aws"
+      "ansible-galaxy collection install community.aws"
+      "sudo yum install python-pip"
+      "pip install boto botocore boto3"
+
     delegate_to: localhost
