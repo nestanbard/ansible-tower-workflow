@@ -1,0 +1,8 @@
+---
+- name: install telnet
+  hosts: 
+  tasks:
+  - name: Install telnet on all
+    package:
+      name: telnet
+      state: present
