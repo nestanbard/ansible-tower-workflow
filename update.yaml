@@ -1,0 +1,8 @@
+---
+- name: Update everything
+  hosts: all 
+  tasks:
+  - name: Yum update
+    package: 
+      name: httpd 
+      state: present
