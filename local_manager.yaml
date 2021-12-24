@@ -1,0 +1,7 @@
+---
+- name: Installs all necessary modules
+  hosts: localhost
+  tasks:
+  - name: Install vpc
+    shell: "ansible-galaxy collection install amazon.aws"
+    delegate_to: localhost
