@@ -24,6 +24,7 @@
     shell: |
       pip install boto botocore boto3
       pip install --force-reinstall ansible ansible-base
+    delegate_to: localhost
       
   - name: Find ansible version
     shell: ansible --version
